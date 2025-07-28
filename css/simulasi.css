@@ -1,0 +1,222 @@
+/* =================================
+   GAYA UNTUK HALAMAN SIMULASI
+   ================================= */
+
+.simulasi-container {
+    padding: 2rem 7%;
+    background-color: var(--white);
+}
+
+.info-bar {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primary);
+}
+
+/* =================================
+   PETA PETUALANGAN & ELEMENNYA
+   ================================= */
+
+.peta-petualangan {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    /* PERBAIKAN: Beri rasio aspek agar wadah punya ketinggian */
+    aspect-ratio: 2 / 1;
+}
+
+/* --- Jalur SVG & Animasinya --- */
+#jalur-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#jalur-utama {
+    fill: none;
+    stroke: #dfe6e9;
+    stroke-width: 15;
+    stroke-linecap: round;
+    stroke-dasharray: 1500; /* Nilai lama */
+    stroke-dashoffset: 1500; /* Nilai lama */
+    animation: gambar-jalur 5s 0.5s ease-out forwards;
+}
+
+@keyframes gambar-jalur {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* --- Karakter Pemain --- */
+.karakter {
+    position: absolute;
+    width: 8%;
+    max-width: 70px;
+    top: 88%; 
+    left: 2%;
+    transform: translate(-50%, -50%);
+    transition: all 1.2s ease-in-out;
+    z-index: 10;
+}
+
+.karakter img {
+    width: 100%;
+}
+
+/* --- Titik Milestone --- */
+.milestone {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary);
+    border: 3px solid var(--white);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.milestone:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.milestone.locked {
+    background-color: var(--gray);
+    cursor: not-allowed;
+}
+
+/* PERBAIKAN: Gaya baru untuk milestone yang sudah selesai */
+.milestone.completed-true {
+    background-color: #3498db; /* Warna BIRU untuk jawaban BENAR */
+    cursor: not-allowed;
+}
+
+.milestone.completed-false {
+    background-color: #e67e22; /* Warna ORANGE untuk jawaban SALAH */
+    cursor: not-allowed;
+}
+
+
+/* =================================
+   GAYA UNTUK MODAL (POPUP)
+   ================================= */
+
+/* --- Modal Pertanyaan --- */
+#pertanyaan-modal .modal-content {
+    text-align: center;
+}
+
+#judul-pertanyaan {
+    font-size: 1.8rem;
+    color: var(--secondary);
+    margin-bottom: 2rem;
+}
+
+.pilihan-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.pilihan-item {
+    background-color: #f8f9fa;
+    border: 2px solid #bdc3c7;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pilihan-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pilihan-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.pilihan-item p {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.pilihan-item.correct {
+    background-color: #eafaf1;
+    border-color: var(--primary);
+}
+
+.pilihan-item.incorrect {
+    background-color: #fde2e2;
+    border-color: #e74c3c;
+}
+
+#feedback-jawaban {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-height: 2rem;
+}
+
+/* --- Modal Hasil Akhir --- */
+.hasil-akhir-content {
+    text-align: center;
+}
+.hasil-akhir-content h2 {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hasil-akhir-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+#skor-final {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+/* =================================
+   ANIMASI TAMBAHAN
+   ================================= */
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+.bintang-pop {
+    animation: pop 0.5s ease-out;
+}
+
+/* =================================
+   PENYESUAIAN RESPONSIVE
+   ================================= */
+@media (max-width: 768px) {
+    .pilihan-container {
+        grid-template-columns: 1fr;
+    }
+    .milestone {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+}

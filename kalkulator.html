@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generasi Sehat Manggisan - Edukasi Stunting & Ibu Hamil</title>
+    
+    <meta name="description" content="Portal edukasi lengkap untuk pencegahan stunting dan panduan kesehatan ibu hamil bagi masyarakat Desa Manggisan. Inisiatif KKN Kolaboratif 138 Jember.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="images/logoo.png" alt="Logo Generasi Sehat Manggisan">
+        </a>
+        
+        <div class="navbar-nav">
+            <a href="index.html">Beranda</a>
+            <a href="stunting.html">Cegah Stunting</a>
+            <a href="ibu-hamil.html">Ibu Hamil</a>
+            <a href="resep.html">Resep Gizi</a>
+            <a href="mitos-fakta.html">Mitos/Fakta</a>
+            <a href="kalkulator.html">Kalkulator</a>
+            <a href="simulasi.html">Simulasi</a>
+            <a href="kontak.html">Kontak</a>
+        </div>
+
+        <div class="navbar-extra">
+            <a href="#" id="hamburger-menu">☰</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="page-header">
+        <div class="header-content" data-aos="fade-down">
+            <h1>Kalkulator & <span>Alat Bantu</span></h1>
+            <p>Gunakan alat bantu di bawah ini untuk memantau kehamilan dan kebutuhan gizi Anda secara praktis.</p>
+        </div>
+    </section>
+
+    <section id="kalkulator-hpl" class="content-section">
+        <div class="kalkulator-container">
+            <h2 data-aos="fade-up">Kalkulator Hari Perkiraan Lahir (HPL)</h2>
+            <p class="deskripsi" data-aos="fade-up">Masukkan tanggal Hari Pertama Haid Terakhir (HPHT) Anda untuk mengetahui perkiraan tanggal kelahiran buah hati dan usia kehamilan Anda saat ini.</p>
+            
+            <div class="kalkulator-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="input-group">
+                    <label for="hpht-date">Pilih Tanggal HPHT Anda:</label>
+                    <input type="date" id="hpht-date">
+                </div>
+                <button id="hitung-hpl-btn" class="kalkulator-btn">Hitung Sekarang</button>
+            </div>
+
+            <div id="hasil-hpl" class="hasil-box hidden">
+                <h4>Hasil Perhitungan:</h4>
+                <div class="hasil-grid">
+                    <div class="hasil-item">
+                        <small>Perkiraan Lahir (HPL)</small>
+                        <p id="hasil-tanggal-hpl" class="hasil-utama">--</p>
+                    </div>
+                    <div class="hasil-item">
+                        <small>Usia Kehamilan Saat Ini</small>
+                        <p id="hasil-usia-kehamilan">--</p>
+                    </div>
+                    <div class="hasil-item">
+                        <small>Anda Berada di</small>
+                        <p id="hasil-trimester">--</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section-alt">
+    <div class="kalkulator-container">
+        <h2 data-aos="fade-up">Kalkulator Kebutuhan Gizi Ibu Hamil</h2>
+        <p class="deskripsi" data-aos="fade-up">Estimasi kebutuhan kalori dan makronutrien harian Anda berdasarkan usia, kondisi fisik, aktivitas, dan trimester kehamilan.</p>
+
+        <div class="kalkulator-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="gizi-usia">Usia Anda (tahun)</label>
+                    <input type="number" id="gizi-usia" placeholder="Contoh: 28">
+                </div>
+                <div class="input-group">
+                    <label for="gizi-tinggi">Tinggi Badan (cm)</label>
+                    <input type="number" id="gizi-tinggi" placeholder="Contoh: 155">
+                </div>
+                <div class="input-group">
+                    <label for="gizi-berat">Berat Badan (kg)</label>
+                    <input type="number" id="gizi-berat" placeholder="Contoh: 55">
+                </div>
+                <div class="input-group">
+                    <label for="gizi-trimester">Trimester Kehamilan</label>
+                    <select id="gizi-trimester">
+                        <option value="1">Trimester 1</option>
+                        <option value="2">Trimester 2</option>
+                        <option value="3">Trimester 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="gizi-aktivitas">Tingkat Aktivitas Harian</label>
+                <select id="gizi-aktivitas">
+                    <option value="1.2">Sangat jarang olahraga</option>
+                    <option value="1.375">Olahraga ringan (1-3 hari/minggu)</option>
+                    <option value="1.55">Olahraga sedang (3-5 hari/minggu)</option>
+                    <option value="1.725">Sangat aktif (6-7 hari/minggu)</option>
+                </select>
+            </div>
+            <button id="hitung-gizi-btn" class="kalkulator-btn">Hitung Kebutuhan Gizi</button>
+        </div>
+
+        <div id="hasil-gizi" class="hasil-box hidden">
+            <h4>Estimasi Kebutuhan Gizi Harian Anda:</h4>
+            <div class="hasil-grid">
+                <div class="hasil-item">
+                    <small>Total Kalori (kkal)</small>
+                    <p id="hasil-kalori" class="hasil-utama">--</p>
+                </div>
+                <div class="hasil-item">
+                    <small>Karbohidrat (gram)</small>
+                    <p id="hasil-karbo">--</p>
+                </div>
+                <div class="hasil-item">
+                    <small>Protein (gram)</small>
+                    <p id="hasil-protein">--</p>
+                </div>
+                <div class="hasil-item">
+                    <small>Lemak (gram)</small>
+                    <p id="hasil-lemak">--</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h4>Generasi Sehat Manggisan</h4>
+                <p>Sebuah portal edukasi digital yang diinisiasi oleh Mahasiswa KKN Kolaboratif Kelompok 138 Jember sebagai program berkelanjutan untuk Desa Manggisan.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="stunting.html">Info Stunting</a></li>
+                    <li><a href="ibu-hamil.html">Info Ibu Hamil</a></li>
+                    <li><a href="resep.html">Resep Sehat</a></li>
+                    <li><a href="kontak.html">Kontak Penting</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 KKN 138 Jember & Desa Manggisan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          once: true, // Animasi hanya berjalan sekali
+          duration: 1000, // Durasi animasi dalam milidetik
+      });
+    </script>
+    
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan 1000 Hari - Generasi Sehat Manggisan</title>
+    
+    <meta name="description" content="Simulasi interaktif Petualangan 1000 Hari Pertama Kehidupan untuk edukasi pencegahan stunting bagi masyarakat Desa Manggisan.">
+    
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/simulasi.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="images/logoo.png" alt="Logo Generasi Sehat Manggisan">
+        </a>
+        
+        <div class="navbar-nav">
+            <a href="index.html">Beranda</a>
+            <a href="stunting.html">Cegah Stunting</a>
+            <a href="ibu-hamil.html">Ibu Hamil</a>
+            <a href="resep.html">Resep Gizi</a>
+            <a href="mitos-fakta.html">Mitos/Fakta</a>
+            <a href="kalkulator.html">Kalkulator</a>
+            <a href="simulasi.html">Simulasi</a>
+            <a href="kontak.html">Kontak</a>
+        </div>
+
+        <div class="navbar-extra">
+            <a href="#" id="hamburger-menu">☰</a>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <section class="page-header">
+            <div class="header-content" data-aos="fade-down">
+                <h1>Petualangan 1000 Hari</h1>
+                <p>Ikuti petualangan seru sambil belajar cara terbaik merawat buah hati!</p>
+            </div>
+        </section>
+
+        <section class="simulasi-container">
+            <div class="info-bar">
+                <span>Bintang Gizi: <span id="skor-bintang">0</span> ⭐</span>
+            </div>
+
+<div class="peta-petualangan">
+    <svg id="jalur-svg" width="100%" height="100%" viewBox="0 0 800 400" preserveAspectRatio="none">
+        <path id="jalur-utama" 
+        d="M 50 350 C 150 350, 150 50, 250 50 S 350 350, 450 350 S 550 50, 650 50 S 750 350, 790 350" />
+    </svg>
+
+    <div id="karakter-pemain" class="karakter">
+        <img src="images/karakter-ibu-bayi.png" alt="Karakter Ibu dan Bayi">
+    </div>
+
+    <div class="milestone" id="milestone1" style="top: 88%; left: 6%;">1</div>
+    <div class="milestone" id="milestone2" style="top: 12%; left: 31%;">2</div>
+    <div class="milestone" id="milestone3" style="top: 88%; left: 56%;">3</div>
+    <div class="milestone" id="milestone4" style="top: 12%; left: 81%;">4</div>
+    <div class="milestone" id="milestone5" style="top: 88%; left: 98%;">5</div>
+</div>
+        </section>
+
+        <div id="pertanyaan-modal" class="modal">
+            <div class="modal-content">
+                <h3 id="judul-pertanyaan"></h3>
+                <div id="pilihan-jawaban" class="pilihan-container">
+                    </div>
+                <div id="feedback-jawaban"></div>
+            </div>
+        </div>
+
+        <div id="hasil-akhir-modal" class="modal">
+            <div class="modal-content hasil-akhir-content">
+                <h2>Petualangan Selesai!</h2>
+                <p id="pesan-hasil-akhir"></p>
+                <div id="skor-final"></div>
+                <button id="main-lagi-btn" class="cta-button">Main Lagi</button>
+            </div>
+        </div>
+
+        <audio id="suara-benar" src="audio/test2.mp3" preload="auto"></audio>
+        <audio id="suara-salah" src="audio/testing.mp3" preload="auto"></audio>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h4>Generasi Sehat Manggisan</h4>
+                <p>Sebuah portal edukasi digital yang diinisiasi oleh Mahasiswa KKN Kolaboratif Kelompok 138 Jember sebagai program berkelanjutan untuk Desa Manggisan.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="stunting.html">Info Stunting</a></li>
+                    <li><a href="ibu-hamil.html">Info Ibu Hamil</a></li>
+                    <li><a href="resep.html">Resep Sehat</a></li>
+                    <li><a href="kontak.html">Kontak Penting</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 KKN 138 Jember & Desa Manggisan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          once: true,
+          duration: 1000,
+      });
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/simulasi.js"></script>
+</body>
+</html>

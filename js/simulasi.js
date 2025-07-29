@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'milestone1',
             question: 'Saat hamil, Ibu sering mual. Apa yang sebaiknya dilakukan?',
             options: [
-                { text: 'Makan dalam porsi besar 2x sehari', img: 'images/pilihan-makan-besar.png', isCorrect: false },
-                { text: 'Makan porsi kecil tapi sering', img: 'images/pilihan-makan-kecil.png', isCorrect: true }
+                { text: 'Makan dalam porsi besar 2x sehari', img: 'Asset/21.svg', isCorrect: false },
+                { text: 'Makan porsi kecil tapi sering', img: 'Asset/22.svg', isCorrect: true }
             ],
             feedback: 'Makan dalam porsi kecil tapi sering dapat membantu menjaga kadar gula darah stabil dan mengurangi rasa mual.',
             position: { top: '88%', left: '6%' }

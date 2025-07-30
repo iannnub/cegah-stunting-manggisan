@@ -2,11 +2,11 @@
    RESET & PENGATURAN DASAR
    ================================= */
 :root {
-    --primary: #27ae60;
-    --secondary: #2c3e50;
-    --background: #ecf0f1;
+    --primary: #c67134;
+    --secondary: #3f322e;
+    --background: #f7f5f2;
     --white: #ffffff;
-    --gray: #7f8c8d;
+    --gray: #8b8b8b;
     --font-family: 'Poppins', sans-serif;
 }
 
@@ -514,7 +514,7 @@ section h2 {
 
 /* Tanda Bahaya Section */
 .tanda-bahaya-section {
-    background-color: #e74c3c;
+    background-color: #b86a34;
     color: var(--white);
     text-align: center;
 }

@@ -654,10 +654,10 @@ section h2 {
 .flip-card-front {
     background-color: var(--white);
     color: var(--secondary);
-    border: 3px solid #e74c3c;
+    border: 3px solid #34495e;
 }
 .flip-card-front h3 {
-    color: #e74c3c;
+    color: #34495e;
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -716,7 +716,9 @@ section h2 {
 }
 .kontak-btn:hover {
     transform: scale(1.05);
+    background-color: #34495e;
 }
+
 .map-container {
     flex: 1 1 45%;
 }
